@@ -4,7 +4,7 @@ include layouts/layoutBS
     h1.mt-3
     div.mt-3
         h1 Update customer information
-        if ( customer == null )
+        if (customer == null)
             h2 Sorry there are no customers
     div.mt-2
         form(action='/CustomerUpdate' method='post')
@@ -17,6 +17,5 @@ include layouts/layoutBS
             .form-group
                 label(for='customerEmail' style='color:black; font-weight: 700;') Email
                 input.form-control(type='text' aria-describedby='emailHelp' id='customerEmail' name='email' value= customer.CustomerEmail )
-
             br
-            button.btn.btn-primary(type='submit') Update
+            button(type='submit' style='background-color: #8497b0') Update Customer

@@ -8,7 +8,10 @@ head
 nav.navbar.navbar-expand-lg.navbar.navbar-light(style='background-color: #5b9bd5;').static-top
     .container
         a.navbar-brand(href='#')
-            img(src='imgs/HappyHarry.png' alt='My Logo' height='50')
+        if from == 'customers'
+            img(src='../../imgs/HappyHarry.png', alt='M2y Logo', height='50')
+        else
+            img(src='imgs/HappyHarry.png', alt='My Logo', height='50')
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
@@ -33,7 +36,7 @@ nav.navbar.navbar-expand-lg.navbar.navbar-light(style='background-color: #5b9bd5
                         a.nav-link(href='/Products') Products
                     li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
                         a.nav-link(href='/Sales') Sales
-                else if from == 'items'
+                else if from == 'Products'
                     li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
                         a.nav-link(href='/Home') Home
                     li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
@@ -52,13 +55,13 @@ nav.navbar.navbar-expand-lg.navbar.navbar-light(style='background-color: #5b9bd5
                     li(style= 'background-color: #F8CBAD; margin-right: 10px; font-weight: bold').nav-item
                         a.nav-link.active(aria-current='page' href='/Sales') Sales
                 else
-                    li(style= 'background-color: #F8CBAD').nav-item
-                        a.nav-link(href='/Home') Home
-                    li(style= 'background-color: #F8CBAD').nav-item
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px; font-weight: bold').nav-item
+                        a.nav-link.active(href='/Home') Home
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
                         a.nav-link(href='/Customer') Customers
-                    li(style= 'background-color: #F8CBAD').nav-item
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
                         a.nav-link(href='/Products') Products
-                    li(style= 'background-color: #F8CBAD').nav-item
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
                         a.nav-link(href='/Sales') Sales
 
 body(style='background-color: #FFC000')
