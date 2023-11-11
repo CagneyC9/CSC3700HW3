@@ -1,0 +1,22 @@
+include layouts/layoutBS
+
+.container.p-4
+    if products.length == 0
+        h2 Sorry, there are currently no products to display.
+    else
+        .container.m-auto(style='width: 60%;')
+            table.table.table-striped.table-bordered
+                thead
+                    tr
+                        th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF') Product
+                        th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF') Total Sales
+                tbody.align-middle
+                    each i in products
+                        tr
+                            td= i.ItemName
+                            if i.TotalSales == null
+                                td= "$0.00"
+                            else
+                                td= i.TotalSales
+            form(method='get' action='/InsertProduct')
+                button( type='submit' style='background-color: #8497b0') Insert New Product

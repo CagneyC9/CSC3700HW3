@@ -1,0 +1,16 @@
+include layouts/layoutBS
+.container
+    h1.mt-3
+    div.mt-3
+        h1 Add New Customer
+    div.mt-2
+        form(action='/Customer' method='post')
+            .form-group
+                label(for='customerName' style='color:black; font-weight: 700;') Name
+                input.form-control(type='text' aria-describedby='emailHelp' id='customerName' name='name')
+            br
+            .form-group
+                label(for='customerName' style='color:black; font-weight: 700;') Email
+                input.form-control(type='email' aria-describedby='emailHelp' id='customerEmail' name='email')
+            br
+            button.btn.btn-primary(type='submit') Submit

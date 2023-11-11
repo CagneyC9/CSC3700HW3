@@ -1,0 +1,22 @@
+include layouts/layoutBS
+
+.container.p-4
+    if sales.length == 0
+        h2 Sorry, there are currently no sales to display.
+    else
+        table.table.table-striped.table-bordered
+            thead
+                tr
+                    th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF') Date
+                    th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF') Customer
+                    th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF') Product
+                    th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF') Quantity
+                    th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF') Total Sales
+            tbody
+                each i in sales
+                    tr
+                        td= i.Date
+                        td= i.CustomerName
+                        td= i.ItemName
+                        td= i.Quantity
+                        td= i.TotalSales

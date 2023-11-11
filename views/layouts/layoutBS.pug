@@ -1,0 +1,67 @@
+//This file formats the navigation bar and the general page format along with the logo
+
+head
+    title  My App
+    link(href='/css/bootstrap.css' rel='stylesheet')
+    script(src='/js/bootstrap.js' type='application/javascript')
+// Navigation
+nav.navbar.navbar-expand-lg.navbar.navbar-light(style='background-color: #5b9bd5;').static-top
+    .container
+        a.navbar-brand(href='#')
+            img(src='imgs/HappyHarry.png' alt='My Logo' height='50')
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+            h3(style='padding-left: 30%').text-light Happy Harry's Hardware
+
+            ul.navbar-nav.ms-auto
+                if from == "home"
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px; font-weight: bold').nav-item
+                        a.nav-link.active(aria-current='page' href='/Home') Home
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Customer') Customers
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Products') Products
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Sales') Sales
+                else if from == 'Customer'
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Home') Home
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px; font-weight: bold').nav-item
+                        a.nav-link.active(aria-current='page' href='/Customer') Customers
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Products') Products
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Sales') Sales
+                else if from == 'items'
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Home') Home
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Customer') Customers
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px; font-weight: bold').nav-item
+                        a.nav-link.active(aria-current='page' href='/Products') Products
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Sales') Sales
+                else if from == 'Sales'
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Home') Home
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Customer') Customers
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px').nav-item
+                        a.nav-link(href='/Products') Products
+                    li(style= 'background-color: #F8CBAD; margin-right: 10px; font-weight: bold').nav-item
+                        a.nav-link.active(aria-current='page' href='/Sales') Sales
+                else
+                    li(style= 'background-color: #F8CBAD').nav-item
+                        a.nav-link(href='/Home') Home
+                    li(style= 'background-color: #F8CBAD').nav-item
+                        a.nav-link(href='/Customer') Customers
+                    li(style= 'background-color: #F8CBAD').nav-item
+                        a.nav-link(href='/Products') Products
+                    li(style= 'background-color: #F8CBAD').nav-item
+                        a.nav-link(href='/Sales') Sales
+
+body(style='background-color: #FFC000')
+
+
+// Page Content

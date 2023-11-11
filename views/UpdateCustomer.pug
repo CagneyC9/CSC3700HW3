@@ -1,0 +1,22 @@
+include layouts/layoutBS
+
+.container
+    h1.mt-3
+    div.mt-3
+        h1 Update customer information
+        if ( customer == null )
+            h2 Sorry there are no customers
+    div.mt-2
+        form(action='/CustomerUpdate' method='post')
+            .form-group
+                input.form-control(type='hidden' name='id' value= customer.CustomerID  )
+            .form-group
+                label(for='customerName' style='color:black; font-weight: 700;') Name
+                input.form-control(type='text' aria-describedby='emailHelp' id='customerName' name='name' value= customer.CustomerName )
+            br
+            .form-group
+                label(for='customerEmail' style='color:black; font-weight: 700;') Email
+                input.form-control(type='text' aria-describedby='emailHelp' id='customerEmail' name='email' value= customer.CustomerEmail )
+
+            br
+            button.btn.btn-primary(type='submit') Update

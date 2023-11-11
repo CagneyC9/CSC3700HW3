@@ -1,0 +1,27 @@
+include layouts/layoutBS
+
+
+
+.container(style="font-size:20px")
+    .row.pt-5
+        .col-sm
+            b Top Customers
+            ol
+                each i in MyCustomers
+                    li= `${i.CustomerName} - ${i.TotalSales}`
+            form(method='get' action='/Customer')
+                button( type='submit' style='background-color: #8497b0') Show All
+        .col-sm
+            b Top Products
+            ol
+                each p in products
+                    li= `${p.ItemName} - ${p.TotalSales}`
+            form(method='get' action='/Products')
+                button( type='submit' style='background-color: #8497b0') Show All
+        .col-sm
+            b Sales
+            ol
+                each s in sales
+                    li= `${s.Date} - ${s.TotalSales}`
+            form(method='get' action='/Sales')
+                button( type='submit' style='background-color: #8497b0') Show All

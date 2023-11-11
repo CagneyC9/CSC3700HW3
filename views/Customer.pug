@@ -1,0 +1,29 @@
+//  This is
+
+include layouts/layoutBS
+
+.container.p-4
+
+    if MyCustomers.length == 0
+        h1 We have no customers
+    else
+        .container(style='width: 60%;')
+            table.table.table-striped.table-bordered
+                thead
+                    tr
+                        th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF') Name
+                        th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF') Email
+                        th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF') Total Sales
+                        th(scope='col', style='background-color: #5b9bd5; color: #FFFFFF')
+                tbody.align-middle
+                    each i in MyCustomers
+                        tr
+                            td= i.CustomerName
+                            td= i.CustomerEmail
+                            td= i.TotalSales
+                            td
+                                form(method='get' action='/UpdateCustomer/' + i.CustomerID)
+                                    button( type='submit', style='background-color: #adb9ca') Update
+            br
+            form(method='get' action='/InsertCustomer')
+                button( type='submit' style='background-color: #adb9ca') Insert New Customer
