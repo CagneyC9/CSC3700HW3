@@ -1,4 +1,4 @@
-//  This is
+//  This is the customer output
 
 include layouts/layoutBS
 
@@ -20,7 +20,10 @@ include layouts/layoutBS
                         tr
                             td= i.CustomerName
                             td= i.CustomerEmail
-                            td= i.TotalSales
+                            if i.TotalSales == null
+                                td= "$0.00"
+                            else
+                                td= i.TotalSales
                             td
                                 form(method='get' action='/UpdateCustomer/' + i.CustomerID)
                                     button( type='submit', style='background-color: #adb9ca') Update
